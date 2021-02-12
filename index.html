@@ -71,40 +71,47 @@ body {
 </body>
 
 <script type="text/javascript">
+var imageProbs = [
+  {
+    image: "bbloh2.png",
+    prob: 0.05
+  },
+  {
+    image: "lenny.png",
+    prob: 0.4
+  },
+  {
+    image: "huat.png",
+    prob: 0.2
+  },
+  {
+    image: "rara.png",
+    prob: 0.15
+  },
+  {
+    image: "neo.png",
+    prob: 0.2
+  }
+]
 
-    var image = new Array ();
-        image[0] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/bbloh2.png";
-        image[1] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[2] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[3] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[4] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[5] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[6] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[7] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[8] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[9] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[10] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[11] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
-        image[12] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
-        image[13] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[14] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[15] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[16] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[17] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
-        image[18] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[19] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+function generateImage() {
+  var remainingProb = Math.random();
+  var currIndex = 0;
 
-    var size = image.length
-    var x = Math.floor(size*Math.random())
+  while (remainingProb > imageProbs[currIndex].prob) {
+    remainingProb -= imageProbs[currIndex].prob;
+    currIndex++;
+  }
 
-	$(".button").click(function() {
-  	$(".button").fadeOut(0);
-		document.getElementById("randomImage").src=image[x];
-		$("#randomImage").bind("load", function() { $(this).fadeIn(1500); });
-	});
+  return imageProbs[currIndex].image
+}
 
+$(".button").click(function() {
+  $(".button").fadeOut(0);
+  document.getElementById("randomImage").src = generateImage();
+  $("#randomImage").bind("load", function() { $(this).fadeIn(1500); });
+});
 
-
- </script>
+</script>
 
 </html>
