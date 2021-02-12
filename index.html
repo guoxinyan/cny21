@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<!doctype html>
 <html>
-    <body style = "background-color: #b8001f"> </body>
-    <title>HAPPY NEW YEAR</title>
-    <img id ="randomImage" alt="#" style = "max-width: 100%">
+	<script src="jquery-3.5.1.min.js"></script>
 
-<script src="jquery-3.5.1.min.js"></script>
-<script>
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year</title>
+</head>
+
+<body style = "background-color: #b8001f">
+	<div style="text-align:center;">
+	<button class="Button" style="">Huat will I get?</button>
+	<img id ="randomImage" alt="#" style = "max-width: 100%;display:none">
+	</div>
+</body>
+
+<script type="text/javascript">
 
     var image = new Array ();
-        image[0] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/bbloh2.png";
+        image[0] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/bbloh.png";
         image[1] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
         image[2] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
         image[3] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
@@ -17,24 +25,25 @@
         image[5] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
         image[6] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
         image[7] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
-        image[8] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[9] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[10] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[11] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
-        image[12] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
-        image[13] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[14] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[15] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[16] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
-        image[17] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
-        image[18] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[19] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png"; 
-    
-    
+        image[8] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+        image[9] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+        image[10] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+        image[11] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+        image[12] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+        image[13] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+        image[14] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
+
     var size = image.length
     var x = Math.floor(size*Math.random())
 
-    document.getElementById("randomImage").src=image[x];
-
+	$(".Button").click(function(){
+  		$(".Button").fadeOut(0);
+		document.getElementById("randomImage").src=image[x];
+		$("#randomImage").bind("load", function () { $(this).fadeIn(1500); });	
+	});
+	
+	
+	
  </script>
+
 </html>
