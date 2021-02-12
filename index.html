@@ -92,7 +92,13 @@ var imageProbs = [
     image: "neo.png",
     prob: 0.2
   }
-]
+];
+
+
+var totalProb = imageProbs.reduce(function(total, item) { return total + item.prob; }, 0)
+if (totalProb !== 1) {
+  alert(`Total prob is not 1; it is ${totalProb}`)
+}
 
 function generateImage() {
   var remainingProb = Math.random();
