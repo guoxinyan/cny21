@@ -48,12 +48,24 @@
   opacity: 1;
   right: 0;
 }
+
+.container-gxy {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+}
+
+body {
+  background-color: #b8001f
+}
 </style>
-	
-	
-<body style = "background-color: #b8001f">
-	<div style="text-align:center;">	
-		<img id ="randomImage" alt="#" style = "max-width: 100%;display:none">
+
+
+<body>
+	<div class="container-gxy">
+		<img id="randomImage" alt="#" style="max-width: 100%;display:none">
 		<button class="button" style="vertical-align:middle"><span> Huat will I get? </span></button>
 	</div>
 </body>
@@ -80,19 +92,19 @@
         image[16] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/huat.png";
         image[17] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/rara.png";
         image[18] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/neo.png";
-        image[19] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png"; 
+        image[19] = "https://raw.githubusercontent.com/guoxinyan/cny21/main/lenny.png";
 
     var size = image.length
     var x = Math.floor(size*Math.random())
 
-	$(".button").click(function(){
-  		$(".button").fadeOut(0);
+	$(".button").click(function() {
+  	$(".button").fadeOut(0);
 		document.getElementById("randomImage").src=image[x];
-		$("#randomImage").bind("load", function () { $(this).fadeIn(1500); });	
+		$("#randomImage").bind("load", function() { $(this).fadeIn(1500); });
 	});
-	
-	
-	
+
+
+
  </script>
 
 </html>
